@@ -1,0 +1,70 @@
+<!-- <!doctype html>
+<html>
+<head>
+    <script src="Web.js"></script>
+</head>
+<style>
+.btnInput {
+  border: 1px solid #4CAF50;
+  width: 200px;
+  height: 100px;
+  font-size:20px
+
+  
+}
+textarea { font-size: 20px; }
+.txtInput { width: 400px; height: 100px;}
+
+::-webkit-input-placeholder {
+  color: pink;
+  font-size:20px
+}
+</style>
+<body>
+<div>
+    <h1>Welcome WebView!<h1>
+    <br>
+   
+    <textarea rows=3 placeholder="What is Your Name" id="myInput"></textarea><br/><br/>		
+    <input class ="btnInput" type="button" value="SHOW MY NAME"
+           onClick="JSPlugin.showName();"/><br/><br/>
+    <input class ="btnInput" type="button" value="GET USERS"
+           onClick="JSPlugin.gotoMain();"/><br/>
+</div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            body {
+                padding-top: 40px;
+            }
+        </style>
+        <title>Sample App</title>
+        <meta charset="UTF-8">
+    </head>
+    <body style="background-color: yellow;">
+        <h1>WKWebView</h1>
+
+        <form class="form-signin" role="form">
+                <div class="form-content">
+
+                    <label for="name" class="form-name">Enter Your Name</label>
+                    <br />
+                    <input type="text" id="name" class="form-control" placeholder="Name" required autofocus />
+                    <br />
+                    <button class="btn btn-lg btn-primary btn-block" type="button" onClick="sendName()">
+                        Send
+                    </button>
+                    <br />
+                    <br />
+                    <button class="btn btn-lg btn-primary btn-block" type="button" onClick="getUsers()">
+                        Get Users
+                    </button>
+                </div>
+        </form>
+        <script type="text/javascript" src="Web.js"></script>
+    </body>
+</html>
