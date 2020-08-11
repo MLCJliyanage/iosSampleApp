@@ -18,6 +18,16 @@ function getUsers() {
     }
 }
 
+function alamofire() {
+    try {
+        webkit.messageHandlers.alamofireGet.postMessage(
+            "alamofire button pressed"
+        );
+    } catch(err) {
+        console.log('Error');
+    }
+}
+
 
 function mobileHeader() {
     document.querySelector('h1').innerHTML = "WKWebView";

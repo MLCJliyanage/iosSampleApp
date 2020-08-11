@@ -16,6 +16,8 @@
 		F911368724DBD36E002E2DB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F911368524DBD36E002E2DB1 /* LaunchScreen.storyboard */; };
 		F911368F24DBD49B002E2DB1 /* web in Resources */ = {isa = PBXBuildFile; fileRef = F911368E24DBD49B002E2DB1 /* web */; };
 		F911369124DBEEDB002E2DB1 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F911369024DBEEDB002E2DB1 /* WebKit.framework */; };
+		F9A3C91624E1CD5C00B40AB4 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A3C91524E1CD5C00B40AB4 /* AppConstant.swift */; };
+		F9A3C91824E1D4BF00B40AB4 /* AlamofireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A3C91724E1D4BF00B40AB4 /* AlamofireViewController.swift */; };
 		F9DED94424E11D6C0046D7C7 /* ContactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DED94324E11D6C0046D7C7 /* ContactData.swift */; };
 		F9EDBD8424DD3B4300076160 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EDBD8324DD3B4300076160 /* UserViewController.swift */; };
 		F9EDBD8624DD58FF00076160 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EDBD8524DD58FF00076160 /* NetworkManager.swift */; };
@@ -35,6 +37,8 @@
 		F911368824DBD36E002E2DB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F911368E24DBD49B002E2DB1 /* web */ = {isa = PBXFileReference; lastKnownFileType = folder; path = web; sourceTree = "<group>"; };
 		F911369024DBEEDB002E2DB1 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		F9A3C91524E1CD5C00B40AB4 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
+		F9A3C91724E1D4BF00B40AB4 /* AlamofireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireViewController.swift; sourceTree = "<group>"; };
 		F9DED94324E11D6C0046D7C7 /* ContactData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactData.swift; sourceTree = "<group>"; };
 		F9EDBD8324DD3B4300076160 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		F9EDBD8524DD58FF00076160 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -95,15 +99,32 @@
 				F911368E24DBD49B002E2DB1 /* web */,
 				F911367A24DBD36C002E2DB1 /* AppDelegate.swift */,
 				F911367C24DBD36C002E2DB1 /* SceneDelegate.swift */,
+				F9A3C91224E1CCA200B40AB4 /* Models */,
 				F9EDBD8224DD397300076160 /* Controller */,
+				F9A3C91124E1CC9300B40AB4 /* Managers */,
 				F911368024DBD36C002E2DB1 /* Main.storyboard */,
 				F911368324DBD36E002E2DB1 /* Assets.xcassets */,
 				F911368524DBD36E002E2DB1 /* LaunchScreen.storyboard */,
 				F911368824DBD36E002E2DB1 /* Info.plist */,
-				F9EDBD8524DD58FF00076160 /* NetworkManager.swift */,
-				F9DED94324E11D6C0046D7C7 /* ContactData.swift */,
+				F9A3C91524E1CD5C00B40AB4 /* AppConstant.swift */,
 			);
 			path = SampleApp;
+			sourceTree = "<group>";
+		};
+		F9A3C91124E1CC9300B40AB4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F9EDBD8524DD58FF00076160 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F9A3C91224E1CCA200B40AB4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F9DED94324E11D6C0046D7C7 /* ContactData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F9EDBD8224DD397300076160 /* Controller */ = {
@@ -111,6 +132,7 @@
 			children = (
 				F911367E24DBD36C002E2DB1 /* ViewController.swift */,
 				F9EDBD8324DD3B4300076160 /* UserViewController.swift */,
+				F9A3C91724E1D4BF00B40AB4 /* AlamofireViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -233,10 +255,12 @@
 			files = (
 				F911367F24DBD36C002E2DB1 /* ViewController.swift in Sources */,
 				F9EDBD8424DD3B4300076160 /* UserViewController.swift in Sources */,
+				F9A3C91624E1CD5C00B40AB4 /* AppConstant.swift in Sources */,
 				F9DED94424E11D6C0046D7C7 /* ContactData.swift in Sources */,
 				F9EDBD8624DD58FF00076160 /* NetworkManager.swift in Sources */,
 				F911367B24DBD36C002E2DB1 /* AppDelegate.swift in Sources */,
 				F911367D24DBD36C002E2DB1 /* SceneDelegate.swift in Sources */,
+				F9A3C91824E1D4BF00B40AB4 /* AlamofireViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

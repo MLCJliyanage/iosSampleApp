@@ -7,8 +7,6 @@
 // https://api.androidhive.info/contacts/
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 class UserViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,ContactManagerDelegate {
             
@@ -17,16 +15,12 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var networkManager = NetworkManager()
     
-    
-    
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         networkManager.delegate = self
-        // Do any additional setup after loading the view.
         networkManager.getContacts()
-    
-        
     }
     
     func didContactUpdate(_ networkManager: NetworkManager, contacts: ContactData) {
@@ -61,35 +55,6 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell?.textLabel?.text = arr_name[indexPath.row]
         return cell!
     
-    }
-    
-    func getData() {
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        AF.request("https://api.androidhive.info/contacts/")
-            .responseJSON {(response) in
-                // print(response)
-                switch response.result{
-                case .success:
-                    let result = try? JSON(data: response.data!)
-                    let resultArray = result!["contacts"]
-                    
-                    self.arr_email.removeAll()
-                    self.arr_name.removeAll()
-                    
-                    for i in resultArray.arrayValue{
-                        let name = i["name"].stringValue
-                        self.arr_name.append(name)
-                        let email = i["email"].stringValue
-                        self.arr_email.append(email)
-                    }
-                    self.tableView.reloadData()
-                    break
-                case .failure:
-                    print(response.error!)
-                break
-                }
-        }
     }
     
 }

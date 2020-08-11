@@ -8,15 +8,22 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 protocol ContactManagerDelegate {
     func didContactUpdate(_ networkManager: NetworkManager, contacts: ContactData)
     func failWithError(error: Error)
 }
 
+protocol AlamofireManagerDelegate {
+    func didGetData(_ networkManager: AlamofireManager, data: Any)
+    func failWithError(error: Error)
+}
+
+let url = AppConstant.apiUrl
+
 final class NetworkManager {
     
-    private let url = "https://api.androidhive.info/contacts/"
     var delegate: ContactManagerDelegate?
     
     func getContacts(){
@@ -42,7 +49,7 @@ final class NetworkManager {
     func parseJSON(data: Data) -> ContactData? {
         let decoder = JSONDecoder()
         do {
-           let decodedData = try decoder.decode(ContactData.self, from: data)
+            let decodedData = try decoder.decode(ContactData.self, from: data)
             print(decodedData.contacts[0])
             return decodedData
         } catch{
@@ -50,5 +57,30 @@ final class NetworkManager {
             return nil
         }
     }
+}
+
+
+final class AlamofireManager {
+    
+    var delegate: AlamofireManagerDelegate?
+    
+    func getData() {
+        if let urlString = URL(string: "\(url)") {
+            AF.request(urlString)
+                .responseJSON { (response) in
+                    switch response.result{
+                    case .success:
+                        self.delegate?.didGetData(self, data: response.data!)
+                        break
+                    case .failure:
+                        print(response.error!)
+                        self.delegate?.failWithError(error: response.error!)
+                        break
+                    }
+            }
+        }
+        
+    }
+    
 }
 
